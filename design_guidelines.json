@@ -1,0 +1,150 @@
+{
+  "identity": {
+    "name": "Nexus Lore",
+    "persona": "The Architect's Codex",
+    "tone": "Immersive, Infinite, Structured yet Arcane",
+    "description": "A worldbuilding tool that feels like an artifact from the world you are creating. It shifts its skin to match your genre."
+  },
+  "typography": {
+    "fonts": {
+      "headings": {
+        "fantasy": "Cormorant Garamond, serif",
+        "scifi": "Unbounded, sans-serif",
+        "default": "Manrope, sans-serif"
+      },
+      "body": {
+        "fantasy": "Crimson Text, serif",
+        "scifi": "Rajdhani, sans-serif",
+        "default": "Manrope, sans-serif"
+      },
+      "ui": "Manrope, sans-serif"
+    },
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "bold": 700,
+      "black": 900
+    },
+    "tracking": {
+      "tight": "-0.02em",
+      "wide": "0.05em",
+      "widest": "0.1em"
+    }
+  },
+  "colors": {
+    "base_theme": "dark",
+    "palettes": {
+      "common": {
+        "background": "#09090b",
+        "foreground": "#fafafa",
+        "card": "#18181b",
+        "card_foreground": "#fafafa",
+        "border": "#27272a",
+        "primary": "#fafafa",
+        "primary_foreground": "#18181b"
+      },
+      "fantasy": {
+        "background": "#1a1614",
+        "foreground": "#e6d5ac",
+        "card": "#2c2420",
+        "card_foreground": "#e6d5ac",
+        "border": "#5c4d3c",
+        "primary": "#d4af37",
+        "primary_foreground": "#1a1614",
+        "accent": "#8b4513",
+        "muted": "#3e3228"
+      },
+      "scifi": {
+        "background": "#030712",
+        "foreground": "#e0f2fe",
+        "card": "#0f172a",
+        "card_foreground": "#e0f2fe",
+        "border": "#1e293b",
+        "primary": "#00f3ff",
+        "primary_foreground": "#000000",
+        "accent": "#d946ef",
+        "muted": "#172554"
+      }
+    },
+    "entity_colors": {
+      "character": "#3b82f6",
+      "place": "#10b981",
+      "event": "#f59e0b",
+      "object": "#8b5cf6",
+      "faction": "#ef4444",
+      "cult": "#db2777"
+    }
+  },
+  "visual_enhancers": {
+    "textures": {
+      "fantasy": "url('https://images.unsplash.com/photo-1694186502839-657cb8fd3d24?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHxhbmNpZW50JTIwbWFwJTIwdGV4dHVyZSUyMHBhcmNobWVudHxlbnwwfHx8fDE3NjUyMjE1Njh8MA&ixlib=rb-4.1.0&q=85')",
+      "scifi": "url('https://images.unsplash.com/photo-1760978632014-f799595497af?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHw0fHxob2xvZ3JhcGhpYyUyMGdyaWQlMjB0ZXh0dXJlfGVufDB8fHx8MTc2NTIyMTU3MHww&ixlib=rb-4.1.0&q=85')",
+      "noise": "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNjUiIG51bU9jdGF2ZXM9IjMiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjA1Ii8+PC9zdmc+')"
+    },
+    "borders": {
+      "fantasy": "border-double border-4 border-amber-700/30",
+      "scifi": "border border-cyan-500/50 shadow-[0_0_10px_rgba(6,182,212,0.3)]",
+      "default": "border border-border"
+    },
+    "glassmorphism": {
+      "fantasy": "bg-[#1a1614]/80 backdrop-blur-md border-amber-900/20",
+      "scifi": "bg-[#030712]/80 backdrop-blur-xl border-cyan-500/20 backdrop-saturate-150"
+    }
+  },
+  "layout_strategies": {
+    "dashboard": "Bento Grid (Mode A: Tetris)",
+    "entity_detail": "Immersive Header + Two Column (Lore 66% | Meta 33%)",
+    "graph_view": "Full Screen Canvas with Floating HUD",
+    "spacing": "Generous (p-8 to p-12 for containers)"
+  },
+  "components": {
+    "graph_engine": "react-force-graph-2d",
+    "rich_text_editor": "tiptap",
+    "ui_library": "shadcn/ui",
+    "icons": "lucide-react (default), @phosphor-icons/react (for specific themes)"
+  },
+  "image_urls": {
+    "fantasy_placeholders": [
+      "https://images.unsplash.com/photo-1763446365107-6b35499f487c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxmYW50YXN5JTIwbGFuZHNjYXBlJTIwbWVkaWV2YWwlMjBjYXN0bGV8ZW58MHx8fHwxNzY1MjIxNTY1fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1758818908570-2392ce78580e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxmYW50YXN5JTIwbGFuZHNjYXBlJTIwbWVkaWV2YWwlMjBjYXN0bGV8ZW58MHx8fHwxNzY1MjIxNTY1fDA&ixlib=rb-4.1.0&q=85"
+    ],
+    "scifi_placeholders": [
+      "https://images.unsplash.com/photo-1732631486925-8f7e9924f993?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzY2ktZmklMjBjeWJlcnB1bmslMjBjaXR5JTIwbmVvbnxlbnwwfHx8fDE3NjUyMjE1Njd8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1758404196311-70c62a445e9c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzY2ktZmklMjBjeWJlcnB1bmslMjBjaXR5JTIwbmVvbnxlbnwwfHx8fDE3NjUyMjE1Njd8MA&ixlib=rb-4.1.0&q=85"
+    ],
+    "textures": [
+      "https://images.unsplash.com/photo-1694186502839-657cb8fd3d24?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHxhbmNpZW50JTIwbWFwJTIwdGV4dHVyZSUyMHBhcmNobWVudHxlbnwwfHx8fDE3NjUyMjE1Njh8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1760978632014-f799595497af?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHxob2xvZ3JhcGhpYyUyMGdyaWQlMjB0ZXh0dXJlfGVufDB8fHx8MTc2NTIyMTU3MHww&ixlib=rb-4.1.0&q=85"
+    ]
+  },
+  "instructions_to_main_agent": {
+    "theme_implementation": "Create a ThemeProvider that wraps the entity detail page. It should accept a 'theme' prop ('fantasy' | 'scifi' | 'default'). Use Tailwind's data attributes (data-theme='fantasy') to style children. For example: 'data-[theme=fantasy]:font-serif data-[theme=fantasy]:bg-stone-900'.",
+    "graph_implementation": "Use react-force-graph-2d. Nodes should be colored by 'type' (Character, Place, etc.). On click, open a side sheet or navigate to the entity page. Use the 'entity_colors' palette.",
+    "rich_text": "Implement Tiptap with a floating menu. Allow users to link other entities by typing '@'.",
+    "dashboard": "Use the Bento Grid layout. The 'Hero' cell should be the 'Recent Activity' or 'World Map Preview'.",
+    "navigation": "Sidebar navigation. Collapsible. Glassmorphism effect.",
+    "animations": "Use framer-motion for page transitions. When switching themes, do a smooth crossfade."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: 'transition: all'. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add '.App { text-align: center; }' in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use 'sonner' for toasts. Sonner component are located in '/app/src/components/ui/sonner.tsx'"
+  ]
+}
