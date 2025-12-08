@@ -1,34 +1,190 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Nexus Lore App Styles */
+
+.sidebar {
+  width: 280px;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 50;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.sidebar-collapsed {
+  width: 72px;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.main-content {
+  margin-left: 280px;
+  min-height: 100vh;
+  padding: 2rem;
 }
 
-.App-link {
-    color: #61dafb;
+.main-content-expanded {
+  margin-left: 72px;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Entity Type Colors */
+.entity-character { color: var(--entity-character); }
+.entity-place { color: var(--entity-place); }
+.entity-event { color: var(--entity-event); }
+.entity-object { color: var(--entity-object); }
+.entity-faction { color: var(--entity-faction); }
+.entity-cult { color: var(--entity-cult); }
+
+.bg-entity-character { background-color: var(--entity-character); }
+.bg-entity-place { background-color: var(--entity-place); }
+.bg-entity-event { background-color: var(--entity-event); }
+.bg-entity-object { background-color: var(--entity-object); }
+.bg-entity-faction { background-color: var(--entity-faction); }
+.bg-entity-cult { background-color: var(--entity-cult); }
+
+.border-entity-character { border-color: var(--entity-character); }
+.border-entity-place { border-color: var(--entity-place); }
+.border-entity-event { border-color: var(--entity-event); }
+.border-entity-object { border-color: var(--entity-object); }
+.border-entity-faction { border-color: var(--entity-faction); }
+.border-entity-cult { border-color: var(--entity-cult); }
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  gap: 1.5rem;
+}
+
+.bento-item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.bento-item-wide {
+  grid-column: span 2;
+}
+
+.bento-item-tall {
+  grid-row: span 2;
+}
+
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bento-item-large {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-item-large,
+  .bento-item-wide {
+    grid-column: span 1;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Graph View */
+.graph-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  background: radial-gradient(circle at center, #18181b 0%, #09090b 100%);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.graph-hud {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
+
+/* Entity Cards */
+.entity-card {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.entity-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Editor Toolbar */
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 8px 8px 0 0;
+}
+
+.editor-toolbar button {
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: var(--muted-foreground);
+}
+
+.editor-toolbar button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.editor-toolbar button.is-active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Tag Styles */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Connection Line */
+.connection-line {
+  stroke: var(--border);
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Theme-specific borders */
+[data-theme="fantasy"] .themed-border {
+  border: double 4px rgba(139, 69, 19, 0.3);
+}
+
+[data-theme="scifi"] .themed-border {
+  border: 1px solid rgba(0, 243, 255, 0.5);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+}
+
+/* Noise overlay */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNjUiIG51bU9jdGF2ZXM9IjMiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjA1Ii8+PC9zdmc+");
 }
