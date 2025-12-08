@@ -84,7 +84,7 @@ async def health_check():
     return {"status": "healthy"}
 
 # Entity CRUD
-@api_router.post("/entities", response_model=EntityResponse)
+@api_router.post("/entities", response_model=EntityResponse, status_code=201)
 async def create_entity(entity: EntityCreate):
     if entity.entity_type not in ENTITY_TYPES:
         raise HTTPException(status_code=400, detail=f"Invalid entity type. Must be one of: {ENTITY_TYPES}")
